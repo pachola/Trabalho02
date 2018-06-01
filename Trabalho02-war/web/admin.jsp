@@ -25,7 +25,7 @@
                 <form action="ServletPrincipal" name="form_admin" id="formindex" method="post">
                     <div id="cxLoginAdmin">
                         <a style="position: absolute; margin-left: 240px" href="pesqCliente.jsp">Cliente</a>
-                        <div id="titCxLogin">Autenticação</div>
+                        <div id="titCxLogin">Autenticação - FUNCIONOUCOMMIT</div>
                         <label class="labelsLogin" for="txtUsuario">Usuário</label><input class="inputsLogin" id="txtUsuario" name="txtUsuario" type="text"/>
                         <br>
                         <label class="labelsLogin" for="txtSenha">Senha</label><input class="inputsLogin" id="txtSenha" name="txtSenha" type="password"/>
