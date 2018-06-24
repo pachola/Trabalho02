@@ -5,6 +5,7 @@ import bean.Usuario;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
@@ -61,6 +62,18 @@ public class UsuarioDao implements UsuarioDaoLocal {
         return user;
     }
 
+       @Override
+    public Usuario findByLogin(String login) {
+        Query query = em.createNamedQuery("Usuario.findLogin");
+        try {
+            Usuario usuario = (Usuario) query.setParameter("login", login).getSingleResult();
+            return usuario;
+        } catch (NoResultException nre) {
+            return null;
+        }
+    }
+    
+    
     @Override
     public void update(Usuario usuario) {
         if (this.valida(usuario)) {

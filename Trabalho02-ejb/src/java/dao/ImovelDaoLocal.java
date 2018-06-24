@@ -14,7 +14,7 @@ public interface ImovelDaoLocal {
     
     public Imovel create(Imovel imovel);
    
-   public Imovel retrive(Imovel imovel);
+   public Imovel retrieve(Imovel imovel);
    
    public void update(Imovel imovel);
    

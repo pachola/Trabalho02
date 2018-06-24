@@ -35,7 +35,7 @@ public class ImovelDao implements ImovelDaoLocal {
     }
 
     @Override
-    public Imovel retrive(Imovel imovel) {
+    public Imovel retrieve(Imovel imovel) {
         Imovel usuRet = em.find(Imovel.class, imovel.getId());
         return usuRet;
     }

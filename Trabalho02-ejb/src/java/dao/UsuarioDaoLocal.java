@@ -23,6 +23,8 @@ public void delete(Usuario usuario);
 
 public List<Usuario> listaTodos();
 
+Usuario findByLogin(String login);
+
 public boolean valida(Usuario usuario);
 
 }

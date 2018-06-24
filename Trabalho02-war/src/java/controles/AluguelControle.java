@@ -71,7 +71,7 @@ public class AluguelControle {
         if (!idImovel.equals("")) {
             atualizar = true;
             imovel.setId(Long.parseLong(idImovel));
-            daoImovel.retrive(imovel);
+            daoImovel.retrieve(imovel);
         }
         Endereco endereco = new Endereco();
         endereco.setId(Long.parseLong(codendereco));
@@ -93,7 +93,7 @@ public class AluguelControle {
         Long idImovel = Long.parseLong(req.getParameter("txtCodigo"));
         Imovel imovel = new Imovel();
         imovel.setId(idImovel);
-        req.setAttribute("imovel", daoImovel.retrive(imovel));
+        req.setAttribute("imovel", daoImovel.retrieve(imovel));
     }
 
     private void excluir() throws ServletException, IOException {
