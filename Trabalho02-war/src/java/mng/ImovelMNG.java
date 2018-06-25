@@ -38,7 +38,7 @@ public class ImovelMNG {
     private int numQuartos;
     private int numSalas;
     private int numGaragem;
-    private int tipo;   //Apartamento, casa, casa-préfabricada, salao comercial
+    private String tipo;   //Apartamento, casa, casa-préfabricada, salao comercial //tava int
     private BigDecimal metragem;
     private BigDecimal preco;
     private Endereco endereco;
@@ -94,11 +94,11 @@ public class ImovelMNG {
         this.numGaragem = numGaragem;
     }
     
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
     
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
     

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="content">
+            <h:form id="formulario">
+                <h:outputText value="#{msgs.titEndList}" styleClass="tituloCadastros"/>
+                <h:commandButton styleClass="buttons" value="#{msgs.btNew}" action="enderecoNew"/>
+                <br/>
+                <div class="tabela">
+                    <h:dataTable value="#{enderecoMNG.lista}" var="end" styleClass="tablebg" headerClass="cabecalhoTabela"  rowClasses="tabelalinhaimpar,tabelalinhapar">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndId}"/>
+                            </f:facet>
+                            <h:outputText value="#{end.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndDesc}"/>
+                            </f:facet>
+                            <h:outputText value="#{end.descricao}"/>
+                        </h:column>
+                        
+                         <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndNumero}"/>
+                            </f:facet>
+                             <h:outputText value="#{end.numero}"/>
+                        </h:column>
+                         <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndCep}"/>
+                            </f:facet>
+                             <h:outputText value="#{end.cep}"/>
+                        </h:column>
+                          <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndCidade}"/>
+                            </f:facet>
+                              <h:outputText value="#{end.cidade}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndBairro}"/>
+                            </f:facet>
+                            <h:outputText value="#{end.bairro}"/>
+                        </h:column>
+                          <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{msgs.lbEndRua}"/>
+                            </f:facet>
+                            <h:outputText value="#{end.rua}"/>
+                        </h:column>
+                        
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="" />
+                            </f:facet>
+                            <h:commandLink immediate="true" value="#{msgs.btRemove}"  actionListener="#{enderecoMNG.remove()}" onclick="if (!confirm('#{msgs.msgConfRemove}')) return false" >
+                                <f:param name="codExcluir" value="#{end.id}" />
+                            </h:commandLink>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="" />
+                            </f:facet>
+                            <h:commandLink immediate="true" value="#{msgs.btUpdate}"  action="#{enderecoMNG.prepUpdate()}">
+                                <f:param name="codEditar" value="#{end.id}" />
+                            </h:commandLink>
+                        </h:column>
+                    </h:dataTable>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

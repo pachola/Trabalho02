@@ -68,7 +68,7 @@ public class VendaControle {
         imovel.setNumGaragem(Integer.parseInt(numGaragem));
         imovel.setMetragem(new BigDecimal(metragem));
         imovel.setPreco(new BigDecimal(preco));
-        imovel.setTipo(Integer.parseInt(tipo));
+       // imovel.setTipo(Integer.parseInt(tipo));
         boolean atualizar = false;
         if (!idImovel.equals("")) {
             atualizar = true;

@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="content">
+            <h:form id="formulario">
+                <h:outputText value="#{msgs.titImvNew}" styleClass="tituloCadastros"/>
+                <br/>
+                 <h:outputLabel styleClass="labels" for="txtId" value="#{msgs.lbImvId}"/>
+                <h:inputText id="txtId" styleClass="inputs" value="${imovelMNG.id}" />
+                <h:message for="txtId" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtAluguel" value="#{msgs.lbImvAluguel}"/>
+                <h:inputText id="txtAluguel" styleClass="inputs" value="${imovelMNG.aluguel}" />
+                <h:message for="txtAluguel" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtVenda" value="#{msgs.lbImvVenda}"/>
+                <h:inputText id="txtVenda" styleClass="inputs" value="${imovelMNG.venda}" />
+                <h:message for="txtVenda" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtNumQuartos" value="#{msgs.lbImvQuartos}"/>
+                <h:inputText id="txtNumQuartos" styleClass="inputs" value="${imovelMNG.numQuartos}" />
+                <h:message for="txtNumQuartos" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtNumSalas" value="#{msgs.lbImvSala}"/>
+                 <h:inputText id="txtNumSalas" styleClass="inputs" value="${imovelMNG.numSalas}" />
+                <h:message for="txtNumSalas" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtNumGaragem" value="#{msgs.lbImvGaragem}"/>
+                <h:inputText id="txtNumGaragem" styleClass="inputs" value="${imovelMNG.numGaragem}" />
+                <h:message for="txtNumGaragem" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtTipo" value="#{msgs.lbImvTipo}"/>
+                <h:inputText id="txtTipo" styleClass="inputs" value="${imovelMNG.tipo}" />
+                <h:message for="txtTipo" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtMetragem" value="#{msgs.lbImvMetragem}"/>
+                <h:inputText id="txtMetragem" styleClass="inputs" value="${imovelMNG.metragem}" />
+                <h:message for="txtMetragem" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtPreco" value="#{msgs.lbImvPreco}"/>
+                 <h:inputText id="txtPreco" styleClass="inputs" value="${imovelMNG.preco}" />
+                <h:message for="txtPreco" styleClass="error"/>
+                <br/>
+                
+                <h:outputLabel styleClass="labels" for="txtEnd" value="#{msgs.lbImvEnd}"/>
+                <h:inputText id="txtEnd" styleClass="inputs" value="${imovelMNG.endereco}" />
+                <h:message for="txtEnd" styleClass="error"/>
+                <br/>
+                
+                <h:commandButton styleClass="buttons" value="#{msgs.btClear}">
+                    <f:ajax render="@form" listener="#{imovelMNG.clear}"/>
+                </h:commandButton>
+                <h:commandButton styleClass="buttons" value="Salvar" action="#{imovelMNG.save}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

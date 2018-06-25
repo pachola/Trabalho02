@@ -28,7 +28,7 @@ public class Imovel implements Serializable {
     private int numQuartos;
     private int numSalas;
     private int numGaragem;
-    private int tipo;   //Apartamento, casa, casa-préfabricada, salao comercial
+    private String tipo;   //Apartamento, casa, casa-préfabricada, salao comercial
     private BigDecimal metragem;
     private BigDecimal preco;
     @OneToOne
@@ -78,11 +78,11 @@ public class Imovel implements Serializable {
         this.numGaragem = numGaragem;
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 
