@@ -17,14 +17,13 @@ import javax.faces.context.FacesContext;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.model.SelectItem;
 import javax.inject.Named;
-import javax.persistence.OneToOne;
 import javax.validation.constraints.Pattern;
 
 /**
  *
  * @author Marcos Pachola
  */
-@Named(value = "departamentoMNG")
+@Named(value = "imovelMNG")
 @RequestScoped
 public class ImovelMNG {
     

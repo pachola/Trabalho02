@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author mertins
+ * @author Marcos Pachola
  */
 @Named(value = "principalMNG")
 @RequestScoped
