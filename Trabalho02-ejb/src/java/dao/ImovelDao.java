@@ -63,6 +63,12 @@ public class ImovelDao implements ImovelDaoLocal {
         //listEnd = query.getResultList();
         return query.getResultList();
     }
+    
+    public List<Imovel> listaTodos2() {
+        Query query = em.createQuery("SELECT imovel FROM Imovel imovel");
+        return query.getResultList();
+    }
+    
 
 //Testar endereco repetido no banco
     @Override

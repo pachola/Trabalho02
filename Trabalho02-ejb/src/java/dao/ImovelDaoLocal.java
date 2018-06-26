@@ -22,6 +22,8 @@ public interface ImovelDaoLocal {
    
    public List<Imovel> listaTodos(boolean aluguel, boolean venda);
    
+   public List<Imovel> listaTodos2();
+   
    public Imovel enderecoRepetido(Endereco endereco);
    
     public boolean valida(Imovel imovel);
