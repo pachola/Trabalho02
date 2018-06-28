@@ -29,10 +29,9 @@ public class ImovelMNG {
 
     @EJB
     ImovelDaoLocal dao;
-    private String codigo;
+    private String id;
     @Pattern(regexp = "(.+)", message = "{invalid.imovel.descricao}")
     private String descricao;
-    private Long id;
     private boolean aluguel;
     private boolean venda;
     private int numQuartos;
@@ -46,11 +45,11 @@ public class ImovelMNG {
     public ImovelMNG() {
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -126,14 +125,6 @@ public class ImovelMNG {
         this.endereco = endereco;
     }
 
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setId(String codigo) {
-        this.codigo = codigo;
-    }
-
     public String getDescricao() {
         return descricao;
     }
@@ -153,17 +144,9 @@ public class ImovelMNG {
         return dao.listaTodos2();
     }
 
-    public List<SelectItem> getListaSelectItem() {
-        List<SelectItem> lista = new ArrayList<SelectItem>();
-        lista.add(new SelectItem(null, ""));
-        for (Imovel imv : dao.listaTodos(true, true)) {
-            lista.add(new SelectItem(imv, imv.getMetragem().toString()));
-        }
-        return lista;
-    }
 
     public void clear(AjaxBehaviorEvent event) {
-        this.codigo = null;
+        this.id = null;
         this.descricao = null;
         this.endereco = null;
         this.metragem = null;
@@ -199,7 +182,7 @@ public class ImovelMNG {
         Imovel imv = new Imovel();
         imv.setId(index);
         imv = dao.retrieve(imv);
-        this.codigo = imv.getId().toString();
+        this.id = imv.getId().toString();
         this.aluguel = imv.isAluguel();
         this.venda = imv.isVenda();
         this.numGaragem = imv.getNumGaragem();
@@ -214,7 +197,7 @@ public class ImovelMNG {
 
     public String update() {
         Imovel imv = new Imovel();
-        imv.setId(Long.valueOf(codigo));
+        imv.setId(Long.valueOf(id));
         imv.setAluguel(aluguel);
         imv.setVenda(venda);
         imv.setMetragem(metragem);

@@ -1,28 +1,37 @@
 package bean;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author Marcos Pachola
  */
 @Entity
+@SequenceGenerator(name = "GerSeqEndereco", sequenceName = "SEQENDERECOID", allocationSize = 1) 
 public class Endereco implements Serializable {
-  
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "GerSeqEndereco")
     private Long id;
+    @Column(nullable = false, length = 400) //
     private String descricao;
+    @Column(nullable = false, length = 400) 
     private int numero;
+    @Column(nullable = false, length = 400) 
     private String cep;
+    @Column(nullable = false, length = 400) 
     private String cidade;
+    @Column(nullable = false, length = 400) 
     private String bairro;
+    @Column(nullable = false, length = 400) 
     private String rua; //logradouro
-  
+
     public String getRua() {
         return rua;
     }
@@ -71,7 +80,6 @@ public class Endereco implements Serializable {
         this.bairro = bairro;
     }
 
-
     public Long getId() {
         return id;
     }
@@ -104,5 +112,5 @@ public class Endereco implements Serializable {
     public String toString() {
         return "bean.Endereco[ id=" + id + " ]";
     }
-    
+
 }

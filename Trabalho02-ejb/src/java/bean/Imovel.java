@@ -7,37 +7,46 @@ package bean;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author Marcos Pachola
  */
 @Entity
+@SequenceGenerator(name = "GerSeqImovel", sequenceName = "SEQIMOVELID")
 public class Imovel implements Serializable {
-    
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "GerSeqImovel") //%AUTOTAVA!=SEMGENERATOR
     private Long id;
+    @Column(nullable = false, length = 400) //%
     private boolean aluguel;
+    @Column(nullable = false)
     private boolean venda;
+    @Column(nullable = false)
     private int numQuartos;
+    @Column(nullable = false, length = 400)
     private int numSalas;
+    @Column(nullable = false, length = 400)
     private int numGaragem;
+    @Column(nullable = false, length = 400)
     private String tipo;   //Apartamento, casa, casa-préfabricada, salao comercial
+    @Column(nullable = false, length = 400)
     private BigDecimal metragem;
+    @Column(nullable = false, length = 400)
     private BigDecimal preco;
-    @OneToOne
+    @OneToOne 
+    @JoinColumn(name = "IDENDERECO", referencedColumnName = "ID") //%
     private Endereco endereco;
-   
-    
-    //imovel.setaluguel(true);
-    //imovel.setnumQuartos(2);
-    //imovel.setEndereco(daoImovel.get..............
+
     public boolean isAluguel() {
         return aluguel;
     }
@@ -109,8 +118,7 @@ public class Imovel implements Serializable {
     public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
-    
-    
+
     public Long getId() {
         return id;
     }
@@ -143,5 +151,5 @@ public class Imovel implements Serializable {
     public String toString() {
         return "bean.Imovel[ id=" + id + " ]";
     }
-    
+
 }

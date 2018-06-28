@@ -1,24 +1,29 @@
 package bean;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQuery;
+import javax.persistence.SequenceGenerator;
 
 /**
  *
  * @author Marcos Pachola
  */
 @Entity
+//@SequenceGenerator(name="GerSeqUsuario", sequenceName = "SEQUSUARIOID")
 @NamedQuery(name = "Usuario.findLogin", query = "SELECT o FROM Usuario o WHERE o.login = :login")
 public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) //cria sequencia 
     private Long id;
+    @Column(nullable = false, length = 400)
     private String login;
+    @Column(nullable = false, length = 400)
     private String senha;
     
     public String getLogin() {

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:composition template="/WEB-INF/templates/default.xhtml">
+        <ui:define name="content">
+            <h:form id="formulario">
+                <h:outputText value="#{msgs.titEndUpdate}" styleClass="tituloCadastros"/>
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtId" value="#{msgs.lbEndId}"/>
+                <h:inputText id="txtId" styleClass="inputs" value="${enderecoMNG.id}" readonly="true" validatorMessage="#{msgs.msgCodEnd}" >
+                    <f:validateLongRange/>
+                </h:inputText>
+                <h:inputHidden value="${enderecoMNG.id}"/>
+                <h:message for="txtId" styleClass="error"/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtDescricao" value="#{msgs.lbEndDesc}"/>
+                <h:inputText id="txtDescricao" styleClass="inputs" value="${enderecoMNG.descricao}" />
+                <h:message for="txtDescricao" styleClass="error"/>
+                <br/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtNumero" value="#{msgs.lbEndNumero}"/>
+                <h:inputText id="txtNumero" styleClass="inputs" value="${enderecoMNG.numero}" />
+                <h:message for="txtNumero" styleClass="error"/>
+                <br/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtCep" value="#{msgs.lbEndCep}"/>
+                <h:inputText id="txtCep" styleClass="inputs" value="${enderecoMNG.cep}" />
+                <h:message for="txtCep" styleClass="error"/>
+                <br/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtCidade" value="#{msgs.lbEndCidade}"/>
+                <h:inputText id="txtCidade" styleClass="inputs" value="${enderecoMNG.cidade}" />
+                <h:message for="txtCidade" styleClass="error"/>
+                <br/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtBairro" value="#{msgs.lbEndBairro}"/>
+                <h:inputText id="txtBairro" styleClass="inputs" value="${enderecoMNG.bairro}" />
+                <h:message for="txtBairro" styleClass="error"/>
+                <br/>
+
+                <br/>
+                <h:outputLabel styleClass="labels" for="txtRua" value="#{msgs.lbEndRua}"/>
+                <h:inputText id="txtRua" styleClass="inputs" value="${enderecoMNG.rua}" />
+                <h:message for="txtRua" styleClass="error"/>
+                <br/>
+
+
+                <h:commandButton styleClass="buttons" value="#{msgs.btClear}">
+                    <f:ajax render="@form" listener="#{enderecoMNG.clear}"/>
+                </h:commandButton>
+                <h:commandButton styleClass="buttons" value="Salvar" action="#{enderecoMNG.update}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</html>
+

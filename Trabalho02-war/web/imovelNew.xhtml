@@ -14,14 +14,24 @@
                 <h:message for="txtId" styleClass="error"/>
                 <br/>
 
-                <h:outputLabel styleClass="labels" for="txtAluguel" value="#{msgs.lbImvAluguel}"/>
-                <h:inputText id="txtAluguel" styleClass="inputs" value="${imovelMNG.aluguel}" />
-                <h:message for="txtAluguel" styleClass="error"/>
-                <br/>
 
-                <h:outputLabel styleClass="labels" for="txtVenda" value="#{msgs.lbImvVenda}"/>
-                <h:inputText id="txtVenda" styleClass="inputs" value="${imovelMNG.venda}" />
-                <h:message for="txtVenda" styleClass="error"/>
+                <h:selectOneRadio>
+
+                    <f:selectItem itemValue="#{msgs.lbImvAluguel}" itemLabel="Imóvel para Aluguel" />
+                    <br/>
+                    <f:selectItem itemValue="#{msgs.lbImvVenda}" itemLabel="Imóvel para Venda" />
+                    <br/>
+                </h:selectOneRadio>
+
+
+<!--                <h:outputLabel styleClass="labels" for="txtAluguel" value="#{msgs.lbImvAluguel}"/>
+<h:inputText id="txtAluguel" styleClass="inputs" value="${imovelMNG.aluguel}" />
+<h:message for="txtAluguel" styleClass="error"/>
+<br/>
+
+<h:outputLabel styleClass="labels" for="txtVenda" value="#{msgs.lbImvVenda}"/>
+<h:inputText id="txtVenda" styleClass="inputs" value="${imovelMNG.venda}" />
+<h:message for="txtVenda" styleClass="error"/>-->
                 <br/>
 
                 <h:outputLabel styleClass="labels" for="txtNumQuartos" value="#{msgs.lbImvQuartos}"/>
@@ -54,10 +64,19 @@
                 <h:message for="txtPreco" styleClass="error"/>
                 <br/>
 
-                <h:outputLabel styleClass="labels" for="txtEnd" value="#{msgs.lbImvEnd}"/>
-                <h:inputText id="txtEnd" styleClass="inputs" converter="enderecoConverter" value="${imovelMNG.endereco}" />
-                <h:message for="txtEnd" styleClass="error"/>
+
+                <h:outputLabel styleClass="labels" for="txtEndereco" value="#{msgs.lbImvEnd}"/>
+                <h:selectOneMenu id="cmbEndereco" styleClass="combos" converter="enderecoConverter" value="#{imovelMNG.endereco}">
+                    <f:selectItems value="#{enderecoMNG.listaSelectItem}" var ="vDept" itemLabel="#{vDept.description}"/>
+                </h:selectOneMenu>
+                <h:message for="cmbEndereco" styleClass="error"/>
                 <br/>
+
+
+<!--  esse exclui por ultimo               <h:outputLabel styleClass="labels" for="txtEnd" value="#{msgs.lbImvEnd}"/>
+                <h:inputText id="txtEnd" styleClass="inputs" converter="enderecoConverter" value="${imovelMNG.endereco.id}" />
+                <h:message for="txtEnd" styleClass="error"/>
+                <br/>-->
 
                 <h:commandButton styleClass="buttons" value="#{msgs.btClear}">
                     <f:ajax render="@form" listener="#{imovelMNG.clear}"/>

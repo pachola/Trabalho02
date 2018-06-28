@@ -22,7 +22,7 @@ public class PrincipalMNG {
         if (session != null) {
             session.invalidate();
         }
-        return "sair";
+        return "index"; //sair
 
     }
 }

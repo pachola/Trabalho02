@@ -28,7 +28,7 @@ public class EnderecoMNG {
     @EJB
     EnderecoDaoLocal dao;
     //CODIGO OU ID OU OS DOIS...
-
+    
     @Pattern(regexp = "(.+)", message = "{invalid.endereco.descricao}")
     private String cod;
     private String descricao;
@@ -190,6 +190,7 @@ public class EnderecoMNG {
         end.setCidade(cidade);
         end.setNumero(numero);
         end.setRua(rua);
+        dao.update(end);
         return "enderecoList";
     }
 }

@@ -12,79 +12,79 @@
                 <br/>
                 <div class="tabela">
                     <h:dataTable value="#{imovelMNG.lista}" var="imv" styleClass="tablebg" headerClass="cabecalhoTabela"  rowClasses="tabelalinhaimpar,tabelalinhapar">
-                     <h:column>
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvId}"/>
                             </f:facet>
-                         <h:outputText value="#{imv.id}"/>
+                            <h:outputText value="#{imv.id}"/>
                         </h:column>
-                    
-                         <h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvAluguel}"/>
                             </f:facet>
-                             <h:outputText value="#{imv.aluguel}"/>
+                            <h:outputText value="#{imv.aluguel}"/>
                         </h:column>
-                        
-                         <h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvVenda}"/>
                             </f:facet>
-                             <h:outputText value="#{imv.venda}"/>
+                            <h:outputText value="#{imv.venda}"/>
                         </h:column>
-                        
-                         <h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvEnd}"/>
                             </f:facet>
-                             <h:outputText value="#{imv.endereco.id}"/>
+                            <h:outputText value="#{imv.endereco.id}"/>
                         </h:column>
-                        
-                         <h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvTipo}"/>
                             </f:facet>
-                             <h:outputText value="#{imv.tipo}"/>
+                            <h:outputText value="#{imv.tipo}"/>
                         </h:column>
-                        
-                         <h:column>
+
+                        <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvPreco}"/>
-                                
+
                             </f:facet>
-                             <h:outputText value="#{imv.preco}"/>
+                            <h:outputText value="#{imv.preco}"/>
                         </h:column>
-                        
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvSala}"/>
                             </f:facet>
                             <h:outputText value="#{imv.numSalas}"/>
                         </h:column>
-                        
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvQuartos}"/>
                             </f:facet>
                             <h:outputText value="#{imv.numQuartos}"/>
                         </h:column>
-                        
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvGaragem}"/>
                             </f:facet>
                             <h:outputText value="#{imv.numGaragem}"/>
                         </h:column>
-                        
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value="#{msgs.lbImvMetragem}"/>
                             </f:facet>
                             <h:outputText value="#{imv.metragem}"/>
                         </h:column>
-                        
-                        
-                        
+
+
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value=" " />
@@ -93,7 +93,7 @@
                                 <f:param name="codExcluir" value="#{imv.id}" />
                             </h:commandLink>
                         </h:column>
-                        
+
                         <h:column>
                             <f:facet name="header">
                                 <h:outputText value=" " />
@@ -102,9 +102,9 @@
                                 <f:param name="codEditar" value="#{imv.id}" />
                             </h:commandLink>
                         </h:column>
-                        
-                        
-                        
+
+
+
                     </h:dataTable>
                 </div>
             </h:form>
