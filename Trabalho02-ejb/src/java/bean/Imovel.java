@@ -21,11 +21,11 @@ import javax.persistence.SequenceGenerator;
  * @author Marcos Pachola
  */
 @Entity
-@SequenceGenerator(name = "GerSeqImovel", sequenceName = "SEQIMOVELID")
 public class Imovel implements Serializable {
+    @SequenceGenerator(name = "GerSeqImovel", sequenceName = "SEQIMOVELID")
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "GerSeqImovel") //%AUTOTAVA!=SEMGENERATOR
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GerSeqImovel") //%AUTOTAVA!=SEMGENERATOR
     private Long id;
     @Column(nullable = false, length = 400) //%
     private boolean aluguel;

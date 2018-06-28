@@ -13,11 +13,11 @@ import javax.persistence.SequenceGenerator;
  * @author Marcos Pachola
  */
 @Entity
-@SequenceGenerator(name = "GerSeqEndereco", sequenceName = "SEQENDERECOID", allocationSize = 1) 
+ 
 public class Endereco implements Serializable {
-
+@SequenceGenerator(name = "GerSeqEndereco", sequenceName = "SEQENDERECOID", allocationSize = 10)
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY, generator = "GerSeqEndereco")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "GerSeqEndereco")
     private Long id;
     @Column(nullable = false, length = 400) //
     private String descricao;

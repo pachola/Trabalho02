@@ -165,7 +165,7 @@ public class ImovelMNG {
         imv.setTipo(tipo);
         imv.setEndereco(endereco);
         dao.create(imv);
-        return "imovelList";//envia pra tela imovlist
+        return "imovelList";
     }
 
     public void remove() {
@@ -192,7 +192,7 @@ public class ImovelMNG {
         this.preco = imv.getPreco();
         this.tipo = imv.getTipo();
         this.endereco = imv.getEndereco();
-        return "imovelUpdate";//envia tela departamento
+        return "imovelUpdate";
     }
 
     public String update() {
